@@ -17,7 +17,7 @@ router.post("/",(req,res)=>{
         score.aggregate([{$group:{_id:"$user_id",allscore:{$sum:"$score"}}}]).then(data=>{
             data.forEach(val=>{
                 if(val._id==user_id){
-                    users.update({_id:val._id},{$set:{allscore:val.allscore}}).then(data=>{
+                    users.update({_id:val._id},{$set:{allscore:parseInt(val.allscore*10)/10}}).then(data=>{
                         console.log(data);
                     })
                 }

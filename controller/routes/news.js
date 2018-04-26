@@ -9,11 +9,11 @@ router.post("/get", (req, res) => {
     let type1 = '';
     let score = '';
     let params = {
-        type:type
+        type:parseInt(type)
     };
     if(!id){  //没有传id
         params = {
-            type:type
+            type:parseInt(type)
         };
     }else{
         params._id = id
@@ -57,7 +57,7 @@ router.post("/get", (req, res) => {
                 }
             })
             if(req.session.user){
-                switch(type){
+                switch(parseInt(type)){
                     case 1:
                         scoreName="查看新闻眼";
                         type1 = 2;
