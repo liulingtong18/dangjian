@@ -58,42 +58,42 @@ router.post("/get", (req, res) => {
             })
             if(req.session.user){
                 switch(type){
-                    case '1':
+                    case 1:
                         scoreName="查看新闻眼";
                         type1 = 2;
                         score = 0.1;
                         break;
-                    case '2':
+                    case 2:
                         scoreName="学习党建知识";
                         type1 = 3;
                         score = 1;
                         break;
-                    case '4':
+                    case 4:
                         scoreName="随时随地学";
                         type1 = 4;
                         score = 1;
                         break;
-                    case '5':
+                    case 5:
                         scoreName="制度建设";
                         type1 = 5;
                         score = 1;
                         break;
-                    case '6':
+                    case 6:
                         scoreName="参加特色活动";
                         type1 = 6;
                         score = 1;
                         break;
-                    case '7':
+                    case 7:
                         scoreName="政治学习";
                         type1 = 7;
                         score = 1;
                         break;
-                    case '8':
+                    case 8:
                         scoreName="查看通知";
                         type1 = 8;
                         score = 1;
                         break;
-                    case '9':
+                    case 9:
                         scoreName="随时随地拍";
                         type1 = 9;
                         score = 1;
@@ -104,14 +104,13 @@ router.post("/get", (req, res) => {
                     console.log('success')
                 })
             }
-            return
+        }else{
+            res.json({
+                data,
+                msg: "success",
+                code: 200
+            })
         }
-        res.json({
-            data: data,
-            code: 200,
-            msg: 'success',
-            ret: true
-        })
     })
 });
 
