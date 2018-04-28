@@ -70,15 +70,7 @@ var usersSchema = new mongoose.Schema({
     },
     payTime:{   //党费最后缴纳时间
         type: Date
-    },
-    createTime:{
-        type: Date,
-        default: Date.now()
-    },
-    updateTime: {
-        type: Date,
-        default: Date.now()
     }
-},{versionKey: false})
+},{versionKey: false,timestamps: {createAt: "createTime",updateAt: "updateTime"}})
 //去掉自动加入的-v：0
 module.exports = mongoose.model("users",usersSchema,"users")

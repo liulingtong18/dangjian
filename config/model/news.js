@@ -22,15 +22,7 @@ var newsSchema = new mongoose.Schema({
     },
     type:{
         type: String
-    },
-    createTime:{
-        type: Date,
-        default: Date.now()
-    },
-    updateTime: {
-        type: Date,
-        default: Date.now()
     }
-},{versionKey: false})
+},{versionKey: false,, timestamps: {createAt: "createTime",updateAt: "updateTime"}})
 //去掉自动加入的-v：0u
 module.exports = mongoose.model("news",newsSchema,"news")

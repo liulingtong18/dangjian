@@ -6,15 +6,7 @@ var slideShowsSchema = new mongoose.Schema({
     },
     title: {
         type: String
-    },
-    createTime:{
-        type: Date,
-        default: Date.now()
-    },
-    updateTime: {
-        type: Date,
-        default: Date.now()
     }
-},{versionKey: false})
+},{versionKey: false,timestamps: {createAt: "createTime",updateAt: "updateTime"}})
 //去掉自动加入的-v：0
 module.exports = mongoose.model("slideShows",slideShowsSchema,"slideShows")
